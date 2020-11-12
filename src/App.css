@@ -43,3 +43,15 @@ input {
   height: 2rem;
   text-align: center;
 }
+
+Footer {
+  text-align: center;
+  background-color: black;
+  text-decoration-color: gray;
+  margin-top: 25rem;
+}
+
+.app {
+  background-color: black;
+  color: black;
+}

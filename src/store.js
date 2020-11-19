@@ -6,13 +6,15 @@ import taskItemsFromFile from './taskItems'
 
 
 const reducer = combineReducers({
-    taskReducer: taskListReducer,
+    taskList: taskListReducer,
 })
 
+//Get the data from local Storage
+const taskFromStorage = localStorage.getItem('taskItems') ? JSON.parse(localStorage.getItem('taskList')) : []
+
+
 const initialState = {
-    task: {
-        taskItems: taskItemsFromFile
-    }
+
 }
 
 const middleware = [thunk]

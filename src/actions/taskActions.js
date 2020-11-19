@@ -1,15 +1,24 @@
-import { ADD_TASK } from '../constants/taskConstants'
+import { ADD_TASK, REMOVE_TASK } from '../constants/taskConstants'
 
 
-export const addTask = (task) => (dispatch, getState) => {
+export const addTask = (text) => (dispatch, getState) => {
 
     dispatch({
         type: ADD_TASK,
         payload: {
-            task
+            task: text,
+            isCompleted: false
         }
     })
 
+    // localStorage.setItem('taskItems', JSON.stringify(text))
 }
 
-export default addTask
+export const removeTask = (index) => (dispatch) => {
+    dispatch({
+        type: REMOVE_TASK,
+        payload: index
+    })
+}
+
+

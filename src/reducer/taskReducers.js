@@ -1,14 +1,21 @@
-import { ADD_TASK } from '../constants/taskConstants'
+import { ADD_TASK, REMOVE_TASK } from '../constants/taskConstants'
 
-export const taskListReducer = (state = { task: [] }, action) => {
+export const taskListReducer = (state = { tasks: [] }, action) => {
     switch (action.type) {
         case ADD_TASK:
-            const item = action.payload
+            const task = action.payload
 
             return {
                 ...state,
-                task: [...state.task, item]
+                tasks: [...state.tasks, task]
             }
+        case REMOVE_TASK: {
+            return {
+                ...state,
+                tasks: state.tasks.filter(x => x !== state.tasks[action.payload])
+            }
+
+        }
         default:
             return state
     }

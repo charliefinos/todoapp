@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Todo = ({ todo, index, completeTodo, deleteTodo }) => {
+const Todo = ({ task, index, completeTodo, deleteTask }) => {
     return (
-        <div style={{ textDecoration: todo.isCompleted ? 'line-through' : '' }} className="todo">
-            {todo.text}
+        <div style={{ textDecoration: task.isCompleted ? 'line-through' : '' }} className="todo">
+            {task.task}
             <div>
-                <button onClick={() => completeTodo(index)}>Complete</button>
-                <button onClick={() => deleteTodo(index)}>Delete</button>
+                <button onClick={() => deleteTask(index)}>Complete</button>
+                <button onClick={() => deleteTask(index)}>Delete</button>
             </div>
         </div>
     )
